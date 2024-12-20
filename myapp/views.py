@@ -12,7 +12,7 @@ def index(request):
   template = loader.get_template('index.html')
   return HttpResponse(template.render({'students':students}, request))
 
-def get_students(request):
+def get_students(request):  
       if request.method == 'GET':
           try:
             students = Student.objects.all().values('name', 'city')
